@@ -4,6 +4,8 @@ import { getUpcomingMovies } from "../api/tmdb-api";
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
+import Tooltip from '@mui/material/Tooltip';
 
 const UpcomingMoviesPage = (props) => {
 
@@ -27,9 +29,9 @@ const UpcomingMoviesPage = (props) => {
     <PageTemplate
       title='Upcoming Movies'
       movies={movies}
-      selectWatchlist={addToWatchlist}
+      // selectWatchlist={addToWatchlist}
       action={(movie) => {
-        return <PlaylistAddIcon movie={movie} />
+        return <AddToWatchlistIcon movie={movie} />
       }}
     />
   );

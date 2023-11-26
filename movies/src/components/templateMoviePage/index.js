@@ -22,7 +22,7 @@ const TemplateMoviePage = ({ movie, children }) => {
     return <h1>{error.message}</h1>;
   }
   
-  const images = data.posters 
+  const images = data.posters[0]
 
   return (
     <>
@@ -37,14 +37,12 @@ const TemplateMoviePage = ({ movie, children }) => {
           }}>
             <ImageList 
                 cols={1}>
-                {images.map((image) => (
-                    <ImageListItem key={image.file_path} cols={1}>
+                    <ImageListItem key={images.file_path} cols={1}>
                     <img
-                        src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
-                        alt={image.poster_path}
+                        src={`https://image.tmdb.org/t/p/w500/${images.file_path}`}
+                        alt={images.poster_path}
                     />
                     </ImageListItem>
-                ))}
             </ImageList>
           </div>
         </Grid>
